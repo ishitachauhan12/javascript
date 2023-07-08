@@ -1,0 +1,52 @@
+<html>
+  <body>
+    <p id="demo"></p>
+    <p id="intro">what!???</p>
+
+    <p id="demo1"></p>
+    <form name="myForm" onsubmit="return validateForm()">
+      Name: <input type="text" name="fname" />
+      <input type="submit" value="Submit" />
+    </form>
+    <p id="p2">Hello World!</p>
+
+    <h1 id="id1">My Heading 1</h1>
+
+    <button
+      type="button"
+      onclick="document.getElementById('id1').style.color = 'red'"
+    >
+      Click Me!
+    </button>
+    <button id="myBtn">Try it</button>
+    <div id="div1">
+      <p id="p1">This is a paragraph.</p>
+      <p id="p2">This is another paragraph.</p>
+    </div>
+    <script>
+      document.getElementById("demo").innerHTML = "Hello World!";
+      const element = document.getElementById("intro");
+
+      document.getElementById("demo1").innerHTML =
+        "The text from the intro paragraph is: " + element.innerHTML;
+      function validateForm() {
+        let x = document.forms["myForm"]["fname"].value;
+        if (x == "") {
+          alert("Name must be filled out");
+          return false;
+        } else {
+          alert("Your name is " + x);
+        }
+      }
+      document.getElementById("p2").style.color = "blue";
+      document.getElementById("myBtn").addEventListener("click", function () {
+        alert("Hello World!");
+      });
+      const para = document.createElement("p");
+      const node = document.createTextNode("This is new.");
+      para.appendChild(node);
+      const element1 = document.getElementById("div1");
+      element1.appendChild(para);
+    </script>
+  </body>
+</html>
